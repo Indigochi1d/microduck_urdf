@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>microduck_urdf</name>
+  <version>0.1.0</version>
+  <description>
+    URDF for the Pollen Robotics Microduck biped, generated from the upstream
+    MuJoCo model with masses, inertias, collision meshes and sensor frames.
+  </description>
+  <maintainer email="diego97523@gmail.com">Indigochi1d</maintainer>
+  <license>Apache-2.0</license>
+  <license>CC-BY-NC-SA-4.0</license>
+
+  <url type="repository">https://github.com/Indigochi1d/microduck_urdf</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

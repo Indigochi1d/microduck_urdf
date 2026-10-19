@@ -1,0 +1,39 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Cell Size: 0.05
+      Plane Cell Count: 20
+      Enabled: true
+    - Class: rviz_default_plugins/RobotModel
+      Name: RobotModel
+      Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Value: /robot_description
+      Visual Enabled: true
+      Collision Enabled: false
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: false
+      Marker Scale: 0.05
+  Global Options:
+    Fixed Frame: base_link
+    Background Color: 48; 48; 48
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 0.6
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Pitch: 0.35
+      Yaw: 0.6
+Window Geometry:
+  Width: 1280
+  Height: 800

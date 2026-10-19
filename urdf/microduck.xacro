@@ -1,0 +1,1040 @@
+<?xml version="1.0"?>
+<!-- Converted from the Microduck MJCF by Pollen Robotics: -->
+<!--   https://github.com/pollen-robotics/microduck_rl (robot_allcollisions.xml) -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="microduck" params="collision:=true">
+    <material name="seeed_bearing__configuration__22x16x4_material">
+      <color rgba="0.811765 0.858824 0.898039 1"/>
+    </material>
+    <material name="right_shell_material">
+      <color rgba="0.85098 0.85098 0.839216 1"/>
+    </material>
+    <material name="banana_pcb_locker_material">
+      <color rgba="0.647059 0.647059 0.647059 1"/>
+    </material>
+    <material name="trunk_base_material">
+      <color rgba="0.129412 0.152941 0.129412 1"/>
+    </material>
+    <material name="xl330_material">
+      <color rgba="0.286275 0.286275 0.286275 1"/>
+    </material>
+    <material name="power_support_material">
+      <color rgba="0.67451 0.639216 0.603922 1"/>
+    </material>
+    <material name="np_f970_material">
+      <color rgba="0.301961 0.301961 0.301961 1"/>
+    </material>
+    <material name="left_shell_material">
+      <color rgba="0.8 0.8 0.8 1"/>
+    </material>
+    <material name="yaw2roll_material">
+      <color rgba="0.129412 0.152941 0.129412 1"/>
+    </material>
+    <material name="bearing_roll_material">
+      <color rgba="0.129412 0.152941 0.129412 1"/>
+    </material>
+    <material name="hip_l_material">
+      <color rgba="0.67451 0.639216 0.603922 1"/>
+    </material>
+    <material name="upper_leg_left_material">
+      <color rgba="0.85098 0.85098 0.839216 1"/>
+    </material>
+    <material name="upper_leg_rigidity_plate_material">
+      <color rgba="0.67451 0.639216 0.603922 1"/>
+    </material>
+    <material name="leg_material">
+      <color rgba="0.67451 0.639216 0.603922 1"/>
+    </material>
+    <material name="sole_left_material">
+      <color rgba="0.956863 0.686275 0.137255 1"/>
+    </material>
+    <material name="foot_left_material">
+      <color rgba="1 0.403922 0.121569 1"/>
+    </material>
+    <material name="seeed_bearing__configuration_default_material">
+      <color rgba="0.811765 0.858824 0.898039 1"/>
+    </material>
+    <material name="ankle_left_material">
+      <color rgba="1 0.403922 0.121569 1"/>
+    </material>
+    <material name="neck_material">
+      <color rgba="0.67451 0.639216 0.603922 1"/>
+    </material>
+    <material name="neck_pitch_material">
+      <color rgba="0.34902 0.376471 0.4 1"/>
+    </material>
+    <material name="yaw_roll_motion_material">
+      <color rgba="0.129412 0.152941 0.129412 1"/>
+    </material>
+    <material name="lens_material">
+      <color rgba="0.262745 0.282353 0.301961 1"/>
+    </material>
+    <material name="face_part_material">
+      <color rgba="0.67451 0.639216 0.603922 1"/>
+    </material>
+    <material name="jaw_soft_material">
+      <color rgba="0.85098 0.756863 0.866667 1"/>
+    </material>
+    <material name="motor_support_material">
+      <color rgba="0.129412 0.152941 0.129412 1"/>
+    </material>
+    <material name="top_head_shell_material">
+      <color rgba="0.85098 0.85098 0.839216 1"/>
+    </material>
+    <material name="elec_rpi_robot_hat_pcb_material">
+      <color rgba="0.313725 0.486275 0.411765 1"/>
+    </material>
+    <material name="soft_mouth_top_material">
+      <color rgba="0.85098 0.756863 0.866667 1"/>
+    </material>
+    <material name="noenoeil_material">
+      <color rgba="0.956863 0.686275 0.137255 1"/>
+    </material>
+    <material name="jaw_material">
+      <color rgba="1 0.403922 0.121569 1"/>
+    </material>
+    <material name="bottom_head_shell_material">
+      <color rgba="1 0.403922 0.121569 1"/>
+    </material>
+    <material name="m12_lens_holder_material">
+      <color rgba="0.262745 0.282353 0.301961 1"/>
+    </material>
+    <material name="pcb__raspberry_pi_zero_2_w_material">
+      <color rgba="0.498039 0.498039 0.498039 1"/>
+    </material>
+    <material name="speaker_material">
+      <color rgba="0.294118 0.290196 0.290196 1"/>
+    </material>
+    <material name="upper_leg_right_material">
+      <color rgba="0.85098 0.85098 0.839216 1"/>
+    </material>
+    <material name="ankle_right_material">
+      <color rgba="1 0.403922 0.121569 1"/>
+    </material>
+    <material name="sole_right_material">
+      <color rgba="0.956863 0.686275 0.137255 1"/>
+    </material>
+    <material name="foot_right_material">
+      <color rgba="1 0.403922 0.121569 1"/>
+    </material>
+    <link name="base_link">
+      <inertial>
+        <origin xyz="-0.0226332 -2.70828e-05 0.00280064" rpy="0 0 0"/>
+        <mass value="0.199224"/>
+        <inertia ixx="0.000123975" ixy="7.1651e-08" ixz="-2.06915e-05" iyy="0.000145931" iyz="1.32429e-07" izz="0.000115351"/>
+      </inertial>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0.006 0.0175 -0.005" rpy="0 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <visual name="right_shell">
+        <origin xyz="0.004 -0.0005 -0.0175" rpy="0 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/right_shell.stl"/></geometry>
+        <material name="right_shell_material"/>
+      </visual>
+      <visual name="banana_pcb_locker">
+        <origin xyz="0.0042 0 -0.0175215" rpy="0 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/banana_pcb_locker.stl"/></geometry>
+        <material name="banana_pcb_locker_material"/>
+      </visual>
+      <visual name="trunk_base">
+        <origin xyz="0.004 0 -0.0175" rpy="0 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/trunk_base.stl"/></geometry>
+        <material name="trunk_base_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0.006 0.0175 0.0115" rpy="0 -1.57079630572 -3.14159265359"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="power_support">
+        <origin xyz="0.004 0 -0.0175215" rpy="0 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/power_support.stl"/></geometry>
+        <material name="power_support_material"/>
+      </visual>
+      <visual name="np_f970">
+        <origin xyz="-0.0359693 0 -0.00385049" rpy="3.12413937147 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/np_f970.stl"/></geometry>
+        <material name="np_f970_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0.006 -0.0175 0.0115" rpy="0 -1.57079630572 -3.14159265359"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="left_shell">
+        <origin xyz="0.004 0 -0.0175785" rpy="0 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/left_shell.stl"/></geometry>
+        <material name="left_shell_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0.006 -0.0175 -0.005" rpy="0 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0.006 0.0175 -0.005" rpy="0 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+        <collision name="right_shell">
+          <origin xyz="0.004 -0.0005 -0.0175" rpy="0 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/right_shell.stl"/></geometry>
+        </collision>
+        <collision name="banana_pcb_locker">
+          <origin xyz="0.0042 0 -0.0175215" rpy="0 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/banana_pcb_locker.stl"/></geometry>
+        </collision>
+        <collision name="trunk_base">
+          <origin xyz="0.004 0 -0.0175" rpy="0 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/trunk_base.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0.006 0.0175 0.0115" rpy="0 -1.57079630572 -3.14159265359"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="power_support">
+          <origin xyz="0.004 0 -0.0175215" rpy="0 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/power_support.stl"/></geometry>
+        </collision>
+        <collision name="np_f970">
+          <origin xyz="-0.0359693 0 -0.00385049" rpy="3.12413937147 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/np_f970.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0.006 -0.0175 0.0115" rpy="0 -1.57079630572 -3.14159265359"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="left_shell">
+          <origin xyz="0.004 0 -0.0175785" rpy="0 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/left_shell.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0.006 -0.0175 -0.005" rpy="0 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="imu_link"/>
+    <link name="left_hip_yaw_link">
+      <inertial>
+        <origin xyz="-8.8e-11 0.00099414 0.0168917" rpy="0 0 0"/>
+        <mass value="0.0230406"/>
+        <inertia ixx="4.1964e-06" ixy="0" ixz="0" iyy="3.41752e-06" iyz="-5.0881e-08" izz="2.3265e-06"/>
+      </inertial>
+      <visual name="yaw2roll">
+        <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/yaw2roll.stl"/></geometry>
+        <material name="yaw2roll_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0125" rpy="-3.14159265359 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0 0.0165 0.0125" rpy="0 1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <visual name="bearing_roll">
+        <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/bearing_roll.stl"/></geometry>
+        <material name="bearing_roll_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="yaw2roll">
+          <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/yaw2roll.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0125" rpy="-3.14159265359 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0 0.0165 0.0125" rpy="0 1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+        <collision name="bearing_roll">
+          <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/bearing_roll.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="left_hip_roll_link">
+      <inertial>
+        <origin xyz="0.014815 1.6179e-08 -0.00829992" rpy="0 0 0"/>
+        <mass value="0.00618934"/>
+        <inertia ixx="8.60626e-07" ixy="1e-12" ixz="3.89882e-07" iyy="1.15753e-06" iyz="-1e-12" izz="6.51588e-07"/>
+      </inertial>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0.021 0 -0.0185" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <visual name="hip_l">
+        <origin xyz="-0.0175 0 -0.0185" rpy="-1.57079632679 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/hip_l.stl"/></geometry>
+        <material name="hip_l_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0.021 0 -0.0185" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+        <collision name="hip_l">
+          <origin xyz="-0.0175 0 -0.0185" rpy="-1.57079632679 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/hip_l.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="left_hip_pitch_link">
+      <inertial>
+        <origin xyz="0.006766 0.0228838 0.0134531" rpy="0 0 0"/>
+        <mass value="0.0482067"/>
+        <inertia ixx="1.68753e-05" ixy="-4.41852e-06" ixz="2.27982e-07" iyy="1.03691e-05" iyz="3.89298e-07" izz="1.98269e-05"/>
+      </inertial>
+      <visual name="upper_leg_left">
+        <origin xyz="0 0 -0.0425" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_left.stl"/></geometry>
+        <material name="upper_leg_left_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0.022 0.0357771 0.0125" rpy="0 -1.57079630572 -3.14159265359"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="upper_leg_rigidity_plate">
+        <origin xyz="0 0 -0.0425" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_rigidity_plate.stl"/></geometry>
+        <material name="upper_leg_rigidity_plate_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0.022 0.0357771 -0.004" rpy="0 0 3.14159265359"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0125" rpy="0 -1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="upper_leg_left">
+          <origin xyz="0 0 -0.0425" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_left.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0.022 0.0357771 0.0125" rpy="0 -1.57079630572 -3.14159265359"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="upper_leg_rigidity_plate">
+          <origin xyz="0 0 -0.0425" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_rigidity_plate.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0.022 0.0357771 -0.004" rpy="0 0 3.14159265359"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0125" rpy="0 -1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="left_knee_link">
+      <inertial>
+        <origin xyz="-1.52e-10 0.0318937 -0.00953505" rpy="0 0 0"/>
+        <mass value="0.0215844"/>
+        <inertia ixx="5.25056e-06" ixy="-1e-12" ixz="0" iyy="2.15507e-06" iyz="7.65005e-07" izz="4.33925e-06"/>
+      </inertial>
+      <visual name="leg">
+        <origin xyz="-0.022 0.0357771 0.0385" rpy="0 1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/leg.stl"/></geometry>
+        <material name="leg_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0.042 -0.0115" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="leg">
+          <origin xyz="-0.022 0.0357771 0.0385" rpy="0 1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/leg.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0.042 -0.0115" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="left_ankle_link">
+      <inertial>
+        <origin xyz="-0.00615742 -0.0137483 -0.0156585" rpy="0 0 0"/>
+        <mass value="0.0300246"/>
+        <inertia ixx="5.91525e-06" ixy="-2.05354e-07" ixz="8.218e-08" iyy="1.11534e-05" iyz="5.6722e-08" izz="7.74016e-06"/>
+      </inertial>
+      <visual name="sole_left">
+        <origin xyz="-0.022 0.00622291 -0.0647" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/sole_left.stl"/></geometry>
+        <material name="sole_left_material"/>
+      </visual>
+      <visual name="foot_left">
+        <origin xyz="-0.022 0.00622291 -0.0647" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/foot_left.stl"/></geometry>
+        <material name="foot_left_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration_default">
+        <origin xyz="0 0 -0.0322" rpy="0 0 3.14159265359"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration_default.stl"/></geometry>
+        <material name="seeed_bearing__configuration_default_material"/>
+      </visual>
+      <visual name="ankle_left">
+        <origin xyz="-0.022 0.00622291 -0.0647" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/ankle_left.stl"/></geometry>
+        <material name="ankle_left_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="sole_left">
+          <origin xyz="-0.022 0.00622291 -0.0647" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/sole_left.stl"/></geometry>
+        </collision>
+        <collision name="foot_left">
+          <origin xyz="-0.022 0.00622291 -0.0647" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/foot_left.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration_default">
+          <origin xyz="0 0 -0.0322" rpy="0 0 3.14159265359"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration_default.stl"/></geometry>
+        </collision>
+        <collision name="ankle_left">
+          <origin xyz="-0.022 0.00622291 -0.0647" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/ankle_left.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="left_foot_link"/>
+    <link name="neck_pitch_link">
+      <inertial>
+        <origin xyz="0 -0.025 0.0141665" rpy="0 0 0"/>
+        <mass value="0.0368414"/>
+        <inertia ixx="1.72925e-05" ixy="0" ixz="0" iyy="3.12694e-06" iyz="0" izz="1.63707e-05"/>
+      </inertial>
+      <visual name="neck">
+        <origin xyz="0.022 0.05 0.028" rpy="0 1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/neck.stl"/></geometry>
+        <material name="neck_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 -0.05 0.0145" rpy="0 -1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="neck">
+        <origin xyz="0.022 0.05 0.003" rpy="0 1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/neck.stl"/></geometry>
+        <material name="neck_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="neck">
+          <origin xyz="0.022 0.05 0.028" rpy="0 1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/neck.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 -0.05 0.0145" rpy="0 -1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="neck">
+          <origin xyz="0.022 0.05 0.003" rpy="0 1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/neck.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="head_pitch_link">
+      <inertial>
+        <origin xyz="-6.533e-09 0.0116641 -0.0145" rpy="0 0 0"/>
+        <mass value="0.00572"/>
+        <inertia ixx="1.09186e-06" ixy="0" ixz="0" iyy="9.66855e-07" iyz="0" izz="5.12111e-07"/>
+      </inertial>
+      <visual name="neck_pitch">
+        <origin xyz="0 0.0287931 -0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/neck_pitch.stl"/></geometry>
+        <material name="neck_pitch_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0 0.0207931 -0.0145" rpy="1.57079632679 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="neck_pitch">
+          <origin xyz="0 0.0287931 -0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/neck_pitch.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0 0.0207931 -0.0145" rpy="1.57079632679 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="head_yaw_link">
+      <inertial>
+        <origin xyz="-0.000166657 -0.00500964 0.0178065" rpy="0 0 0"/>
+        <mass value="0.0486"/>
+        <inertia ixx="6.97903e-06" ixy="3.21657e-07" ixz="-3.4797e-08" iyy="8.10293e-06" iyz="3.4295e-07" izz="9.57884e-06"/>
+      </inertial>
+      <visual name="yaw_roll_motion">
+        <origin xyz="0 0 0.01" rpy="0 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/yaw_roll_motion.stl"/></geometry>
+        <material name="yaw_roll_motion_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="-0.016 0 0.0145" rpy="0 -1.57079630572 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0.018 0 0.0145" rpy="0 -1.57079630572 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="yaw_roll_motion">
+          <origin xyz="0 0 0.01" rpy="0 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/yaw_roll_motion.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="-0.016 0 0.0145" rpy="0 -1.57079630572 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0.018 0 0.0145" rpy="0 -1.57079630572 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="head_roll_link">
+      <inertial>
+        <origin xyz="0.00460523 0.00120047 -0.0324761" rpy="0 0 0"/>
+        <mass value="0.188766"/>
+        <inertia ixx="0.000320812" ixy="-6.32289e-07" ixz="6.57154e-06" iyy="0.0002541" iyz="4.18475e-06" izz="0.000149882"/>
+      </inertial>
+      <visual name="lens">
+        <origin xyz="0.0155 -9.13778e-05 -0.05548" rpy="-1.57079632679 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/lens.stl"/></geometry>
+        <material name="lens_material"/>
+      </visual>
+      <visual name="face_part">
+        <origin xyz="-0.0045 -9.13778e-05 -0.0178" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/face_part.stl"/></geometry>
+        <material name="face_part_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0.003 0.0255 -0.018" rpy="0 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="jaw_soft">
+        <origin xyz="-0.0046 0 -0.0179996" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/jaw_soft.stl"/></geometry>
+        <material name="jaw_soft_material"/>
+      </visual>
+      <visual name="motor_support">
+        <origin xyz="-0.0045 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/motor_support.stl"/></geometry>
+        <material name="motor_support_material"/>
+      </visual>
+      <visual name="top_head_shell">
+        <origin xyz="-0.0045 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/top_head_shell.stl"/></geometry>
+        <material name="top_head_shell_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration_default">
+        <origin xyz="0.0032 -0.04 -0.018" rpy="0 1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration_default.stl"/></geometry>
+        <material name="seeed_bearing__configuration_default_material"/>
+      </visual>
+      <visual name="elec_rpi_robot_hat_pcb">
+        <origin xyz="0.02694 0.0289936 -0.0519" rpy="0 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/elec_rpi_robot_hat_pcb.stl"/></geometry>
+        <material name="elec_rpi_robot_hat_pcb_material"/>
+      </visual>
+      <visual name="soft_mouth_top">
+        <origin xyz="-0.00420071 1.7776e-08 -0.0180814" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/soft_mouth_top.stl"/></geometry>
+        <material name="soft_mouth_top_material"/>
+      </visual>
+      <visual name="noenoeil">
+        <origin xyz="-0.0045 -9.13778e-05 -0.0178" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/noenoeil.stl"/></geometry>
+        <material name="noenoeil_material"/>
+      </visual>
+      <visual name="jaw">
+        <origin xyz="-0.0045 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/jaw.stl"/></geometry>
+        <material name="jaw_material"/>
+      </visual>
+      <visual name="bottom_head_shell">
+        <origin xyz="-0.0043 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/bottom_head_shell.stl"/></geometry>
+        <material name="bottom_head_shell_material"/>
+      </visual>
+      <visual name="m12_lens_holder">
+        <origin xyz="0.0155 -9.13778e-05 -0.05558" rpy="-1.57079632679 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/m12_lens_holder.stl"/></geometry>
+        <material name="m12_lens_holder_material"/>
+      </visual>
+      <visual name="pcb__raspberry_pi_zero_2_w">
+        <origin xyz="0.015435 -1.13778e-05 -0.06001" rpy="-1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/pcb__raspberry_pi_zero_2_w.stl"/></geometry>
+        <material name="pcb__raspberry_pi_zero_2_w_material"/>
+      </visual>
+      <visual name="speaker">
+        <origin xyz="0.01 -0.016786 0.0260226" rpy="1.57079632679 0 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/speaker.stl"/></geometry>
+        <material name="speaker_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="lens">
+          <origin xyz="0.0155 -9.13778e-05 -0.05548" rpy="-1.57079632679 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/lens.stl"/></geometry>
+        </collision>
+        <collision name="face_part">
+          <origin xyz="-0.0045 -9.13778e-05 -0.0178" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/face_part.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0.003 0.0255 -0.018" rpy="0 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="jaw_soft">
+          <origin xyz="-0.0046 0 -0.0179996" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/jaw_soft.stl"/></geometry>
+        </collision>
+        <collision name="motor_support">
+          <origin xyz="-0.0045 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/motor_support.stl"/></geometry>
+        </collision>
+        <collision name="top_head_shell">
+          <origin xyz="-0.0045 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/top_head_shell.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0145" rpy="0 -1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration_default">
+          <origin xyz="0.0032 -0.04 -0.018" rpy="0 1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration_default.stl"/></geometry>
+        </collision>
+        <collision name="elec_rpi_robot_hat_pcb">
+          <origin xyz="0.02694 0.0289936 -0.0519" rpy="0 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/elec_rpi_robot_hat_pcb.stl"/></geometry>
+        </collision>
+        <collision name="soft_mouth_top">
+          <origin xyz="-0.00420071 1.7776e-08 -0.0180814" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/soft_mouth_top.stl"/></geometry>
+        </collision>
+        <collision name="noenoeil">
+          <origin xyz="-0.0045 -9.13778e-05 -0.0178" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/noenoeil.stl"/></geometry>
+        </collision>
+        <collision name="jaw">
+          <origin xyz="-0.0045 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/jaw.stl"/></geometry>
+        </collision>
+        <collision name="bottom_head_shell">
+          <origin xyz="-0.0043 0 -0.018" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/bottom_head_shell.stl"/></geometry>
+        </collision>
+        <collision name="m12_lens_holder">
+          <origin xyz="0.0155 -9.13778e-05 -0.05558" rpy="-1.57079632679 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/m12_lens_holder.stl"/></geometry>
+        </collision>
+        <collision name="pcb__raspberry_pi_zero_2_w">
+          <origin xyz="0.015435 -1.13778e-05 -0.06001" rpy="-1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/pcb__raspberry_pi_zero_2_w.stl"/></geometry>
+        </collision>
+        <collision name="speaker">
+          <origin xyz="0.01 -0.016786 0.0260226" rpy="1.57079632679 0 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/speaker.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="head_camera_link"/>
+    <link name="tof_link"/>
+    <link name="head_imu_link"/>
+    <link name="mouth_tip_link"/>
+    <link name="right_hip_yaw_link">
+      <inertial>
+        <origin xyz="-8.8e-11 0.00099414 0.0168917" rpy="0 0 0"/>
+        <mass value="0.0230406"/>
+        <inertia ixx="4.1964e-06" ixy="0" ixz="0" iyy="3.41752e-06" iyz="-5.0881e-08" izz="2.3265e-06"/>
+      </inertial>
+      <visual name="yaw2roll">
+        <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/yaw2roll.stl"/></geometry>
+        <material name="yaw2roll_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0125" rpy="3.14159265359 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="bearing_roll">
+        <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/bearing_roll.stl"/></geometry>
+        <material name="bearing_roll_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0 0.0165 0.0125" rpy="0 1.57079632679 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="yaw2roll">
+          <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/yaw2roll.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0125" rpy="3.14159265359 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="bearing_roll">
+          <origin xyz="-0.0175 -0.002 0.0125" rpy="3.14159265359 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/bearing_roll.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0 0.0165 0.0125" rpy="0 1.57079632679 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="right_hip_roll_link">
+      <inertial>
+        <origin xyz="0.014815 1.6212e-08 -0.00829992" rpy="0 0 0"/>
+        <mass value="0.00618934"/>
+        <inertia ixx="8.60626e-07" ixy="1e-12" ixz="3.89882e-07" iyy="1.15753e-06" iyz="-1e-12" izz="6.51588e-07"/>
+      </inertial>
+      <visual name="hip_l">
+        <origin xyz="-0.0175 0 -0.0185" rpy="-1.57079632679 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/hip_l.stl"/></geometry>
+        <material name="hip_l_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="0.025 0 -0.0185" rpy="1.57079632679 0 -1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="hip_l">
+          <origin xyz="-0.0175 0 -0.0185" rpy="-1.57079632679 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/hip_l.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="0.025 0 -0.0185" rpy="1.57079632679 0 -1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="right_hip_pitch_link">
+      <inertial>
+        <origin xyz="-0.006766 0.0228838 0.0134531" rpy="0 0 0"/>
+        <mass value="0.0482067"/>
+        <inertia ixx="1.68753e-05" ixy="4.41852e-06" ixz="-2.27982e-07" iyy="1.03691e-05" iyz="3.89298e-07" izz="1.98269e-05"/>
+      </inertial>
+      <visual name="xl330">
+        <origin xyz="-0.022 0.0357771 0.0125" rpy="0 -1.57079630572 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration__22x16x4">
+        <origin xyz="-0.022 0.0357771 0" rpy="3.14159265359 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        <material name="seeed_bearing__configuration__22x16x4_material"/>
+      </visual>
+      <visual name="upper_leg_rigidity_plate">
+        <origin xyz="0 0 0.0435" rpy="0 1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_rigidity_plate.stl"/></geometry>
+        <material name="upper_leg_rigidity_plate_material"/>
+      </visual>
+      <visual name="upper_leg_right">
+        <origin xyz="0 0 -0.0425" rpy="0 1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_right.stl"/></geometry>
+        <material name="upper_leg_right_material"/>
+      </visual>
+      <visual name="xl330">
+        <origin xyz="0 0 0.0125" rpy="0 -1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="xl330">
+          <origin xyz="-0.022 0.0357771 0.0125" rpy="0 -1.57079630572 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration__22x16x4">
+          <origin xyz="-0.022 0.0357771 0" rpy="3.14159265359 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration__22x16x4.stl"/></geometry>
+        </collision>
+        <collision name="upper_leg_rigidity_plate">
+          <origin xyz="0 0 0.0435" rpy="0 1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_rigidity_plate.stl"/></geometry>
+        </collision>
+        <collision name="upper_leg_right">
+          <origin xyz="0 0 -0.0425" rpy="0 1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/upper_leg_right.stl"/></geometry>
+        </collision>
+        <collision name="xl330">
+          <origin xyz="0 0 0.0125" rpy="0 -1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="right_knee_link">
+      <inertial>
+        <origin xyz="-0.0318937 -1.52e-10 -0.00953505" rpy="0 0 0"/>
+        <mass value="0.0215844"/>
+        <inertia ixx="2.15507e-06" ixy="1e-12" ixz="-7.65005e-07" iyy="5.25056e-06" iyz="0" izz="4.33925e-06"/>
+      </inertial>
+      <visual name="xl330">
+        <origin xyz="-0.042 0 -0.0115" rpy="0 -1.57079630572 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        <material name="xl330_material"/>
+      </visual>
+      <visual name="leg">
+        <origin xyz="-0.0357771 -0.022 0.0385" rpy="0 1.57079630572 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/leg.stl"/></geometry>
+        <material name="leg_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="xl330">
+          <origin xyz="-0.042 0 -0.0115" rpy="0 -1.57079630572 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/xl330.stl"/></geometry>
+        </collision>
+        <collision name="leg">
+          <origin xyz="-0.0357771 -0.022 0.0385" rpy="0 1.57079630572 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/leg.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="right_ankle_link">
+      <inertial>
+        <origin xyz="0.00615539 -0.0137482 -0.0156566" rpy="0 0 0"/>
+        <mass value="0.0300251"/>
+        <inertia ixx="5.91534e-06" ixy="2.04877e-07" ixz="-8.2467e-08" iyy="1.11534e-05" iyz="5.7017e-08" izz="7.74015e-06"/>
+      </inertial>
+      <visual name="ankle_right">
+        <origin xyz="0.022 0.00622291 -0.0647" rpy="0 1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/ankle_right.stl"/></geometry>
+        <material name="ankle_right_material"/>
+      </visual>
+      <visual name="sole_right">
+        <origin xyz="0.022 0.00622291 -0.0647" rpy="0 1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/sole_right.stl"/></geometry>
+        <material name="sole_right_material"/>
+      </visual>
+      <visual name="seeed_bearing__configuration_default">
+        <origin xyz="0 0 -0.0292" rpy="3.14159265359 0 0"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration_default.stl"/></geometry>
+        <material name="seeed_bearing__configuration_default_material"/>
+      </visual>
+      <visual name="foot_right">
+        <origin xyz="0.022 0.00622291 -0.0647" rpy="0 1.57079632679 1.57079632679"/>
+        <geometry><mesh filename="package://microduck_urdf/meshes/foot_right.stl"/></geometry>
+        <material name="foot_right_material"/>
+      </visual>
+      <xacro:if value="${collision}">
+        <collision name="ankle_right">
+          <origin xyz="0.022 0.00622291 -0.0647" rpy="0 1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/ankle_right.stl"/></geometry>
+        </collision>
+        <collision name="sole_right">
+          <origin xyz="0.022 0.00622291 -0.0647" rpy="0 1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/sole_right.stl"/></geometry>
+        </collision>
+        <collision name="seeed_bearing__configuration_default">
+          <origin xyz="0 0 -0.0292" rpy="3.14159265359 0 0"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/seeed_bearing__configuration_default.stl"/></geometry>
+        </collision>
+        <collision name="foot_right">
+          <origin xyz="0.022 0.00622291 -0.0647" rpy="0 1.57079632679 1.57079632679"/>
+          <geometry><mesh filename="package://microduck_urdf/meshes/foot_right.stl"/></geometry>
+        </collision>
+      </xacro:if>
+    </link>
+    <link name="right_foot_link"/>
+    <joint name="imu_joint" type="fixed">
+      <origin xyz="-0.021 6.64098e-05 -0.0146984" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="imu_link"/>
+    </joint>
+    <joint name="left_hip_yaw" type="revolute">
+      <origin xyz="0.006 0.0175 -0.005" rpy="3.14159265359 0 1.57079632679"/>
+      <parent link="base_link"/>
+      <child link="left_hip_yaw_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.436332312999" upper="0.523598775598" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="left_hip_roll" type="revolute">
+      <origin xyz="0 0.0165 0.0125" rpy="-1.57079632679 0 0"/>
+      <parent link="left_hip_yaw_link"/>
+      <child link="left_hip_roll_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.383972435439" upper="0.383972435439" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="left_hip_pitch" type="revolute">
+      <origin xyz="0.025 0 -0.0185" rpy="-1.57079632679 0 -1.57079632679"/>
+      <parent link="left_hip_roll_link"/>
+      <child link="left_hip_pitch_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="left_knee" type="revolute">
+      <origin xyz="0.022 0.0357771 -0.004" rpy="3.14159265359 0 1.57079632679"/>
+      <parent link="left_hip_pitch_link"/>
+      <child link="left_knee_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="left_ankle" type="revolute">
+      <origin xyz="0 0.042 -0.026" rpy="-3.14159265359 0 0"/>
+      <parent link="left_knee_link"/>
+      <child link="left_ankle_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="left_foot_joint" type="fixed">
+      <origin xyz="0 -0.0238146 -0.0140852" rpy="1.57079632679 0 3.14159265359"/>
+      <parent link="left_ankle_link"/>
+      <child link="left_foot_link"/>
+    </joint>
+    <joint name="neck_pitch" type="revolute">
+      <origin xyz="0.026 0.0145 0.0324215" rpy="-1.57079632679 0 3.14159265359"/>
+      <parent link="base_link"/>
+      <child link="neck_pitch_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.0471975512" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="head_pitch" type="revolute">
+      <origin xyz="0 -0.05 0" rpy="3.14159265359 0 0"/>
+      <parent link="neck_pitch_link"/>
+      <child link="head_pitch_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="head_yaw" type="revolute">
+      <origin xyz="0 0.0186931 -0.0145" rpy="1.57079632679 0 3.14159265359"/>
+      <parent link="head_pitch_link"/>
+      <child link="head_yaw_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-2.96705972839" upper="2.96705972839" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="head_roll" type="revolute">
+      <origin xyz="-0.0179 0 0.0145" rpy="0 -1.57079630572 0"/>
+      <parent link="head_yaw_link"/>
+      <child link="head_roll_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.436332312999" upper="0.436332312999" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="head_camera_joint" type="fixed">
+      <origin xyz="0.0155 -9.13778e-05 -0.0733" rpy="0 1.57079630572 0"/>
+      <parent link="head_roll_link"/>
+      <child link="head_camera_link"/>
+    </joint>
+    <joint name="tof_joint" type="fixed">
+      <origin xyz="0.0135 0.0224086 -0.0733" rpy="0 1.57079630572 0"/>
+      <parent link="head_roll_link"/>
+      <child link="tof_link"/>
+    </joint>
+    <joint name="head_imu_joint" type="fixed">
+      <origin xyz="0.0152323 0.000111069 -0.05106" rpy="0 0 0"/>
+      <parent link="head_roll_link"/>
+      <child link="head_imu_link"/>
+    </joint>
+    <joint name="mouth_tip_joint" type="fixed">
+      <origin xyz="-0.00809334 0 -0.0777383" rpy="3.14159265359 1.5620706008 3.14159265359"/>
+      <parent link="head_roll_link"/>
+      <child link="mouth_tip_link"/>
+    </joint>
+    <joint name="right_hip_yaw" type="revolute">
+      <origin xyz="0.006 -0.0175 -0.005" rpy="-3.14159265359 0 1.57079632679"/>
+      <parent link="base_link"/>
+      <child link="right_hip_yaw_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.523598775598" upper="0.436332312999" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="right_hip_roll" type="revolute">
+      <origin xyz="0 0.0165 0.0125" rpy="1.57079632679 0 3.14159265359"/>
+      <parent link="right_hip_yaw_link"/>
+      <child link="right_hip_roll_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-0.383972435439" upper="0.383972435439" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="right_hip_pitch" type="revolute">
+      <origin xyz="0.025 0 -0.0185" rpy="-1.57079632679 0 -1.57079632679"/>
+      <parent link="right_hip_roll_link"/>
+      <child link="right_hip_pitch_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="right_knee" type="revolute">
+      <origin xyz="-0.022 0.0357771 -0.004" rpy="3.14159265359 0 0"/>
+      <parent link="right_hip_pitch_link"/>
+      <child link="right_knee_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="right_ankle" type="revolute">
+      <origin xyz="-0.042 0 -0.026" rpy="-3.14159265359 0 1.57079632679"/>
+      <parent link="right_knee_link"/>
+      <child link="right_ankle_link"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57079632679" upper="1.57079632679" effort="0.96" velocity="10.8"/>
+      <dynamics damping="0.053" friction="0.0048"/>
+    </joint>
+    <joint name="right_foot_joint" type="fixed">
+      <origin xyz="0 -0.0238146 -0.0140852" rpy="-1.57079632679 0 0"/>
+      <parent link="right_ankle_link"/>
+      <child link="right_foot_link"/>
+    </joint>
+  </xacro:macro>
+</robot>

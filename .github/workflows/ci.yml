@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  ros:
+    name: colcon build & test (ros:kilted)
+    runs-on: ubuntu-latest
+    container: ros:kilted
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: src/microduck_urdf
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          rosdep update
+          rosdep install --from-paths src --ignore-src -y
+
+      - name: Build
+        run: |
+          . /opt/ros/kilted/setup.sh
+          colcon build --packages-select microduck_urdf
+
+      - name: Test
+        run: |
+          . /opt/ros/kilted/setup.sh
+          . install/setup.sh
+          colcon test --packages-select microduck_urdf --event-handlers console_direct+
+          colcon test-result --verbose
+
